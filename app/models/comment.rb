@@ -22,4 +22,18 @@ class Comment < ApplicationRecord
     
     return the_user
   end
+ 
+
+  def username
+
+  
+    my_id = self.author_id 
+  
+    matching_users = User.where({ :id => my_id }).first
+  
+    the_user = matching_users.username 
+    return the_user
+  
+    end
+
 end
